@@ -33,6 +33,7 @@ class BatteryVoltsTable extends Table
         parent::initialize($config);
 
         $this->setTable('battery_volts');
+        $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
     }
