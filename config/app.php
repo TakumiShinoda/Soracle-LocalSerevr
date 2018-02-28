@@ -64,7 +64,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', '__SALT__'),
+        'salt' => env('SECURITY_SALT', 'dc426679cd89f194f652a8d176ddaf152d87bb7f551399678ff0d39f3e93ce37'),
     ],
 
     /**
@@ -229,9 +229,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'my_app',
+            'username' => 'takumishinoda',
+            'password' => 'soracle',
+            'database' => 'soracle',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],

@@ -47,6 +47,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
     $routes->connect('/soracle/*', ['controller' => 'Soracle', 'action'=> 'index']);
+    $routes->connect('/soracle/*', ['controller' => 'Soracle', 'action'=> 'index', 'post']);
     $routes->fallbacks(DashedRoute::class);
 });
 
