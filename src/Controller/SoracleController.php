@@ -13,7 +13,6 @@ class SoracleController extends AppController{
 
   public function post(){
     $this->viewBuilder()->layout(false);
-    $this->autoRender = false;
 
     $battery_volts = TableRegistry::get('battery_volts');
     $battery_volt = $battery_volts->newEntity();
@@ -27,9 +26,9 @@ class SoracleController extends AppController{
       $this->giveId($battery_volts, $battery_volt);
 
       if($battery_volts->save($battery_volt)){
-        $this->log('suc');
+        $this->set('mes', 'success');
       }else{
-        $this->log('fail');
+        $this->set('mes', 'fail');
       }
     }
     $this->render('post');
