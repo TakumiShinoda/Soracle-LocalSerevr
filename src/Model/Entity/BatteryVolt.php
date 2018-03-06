@@ -22,7 +22,7 @@ class BatteryVolt extends Entity
      * @var array
      */
     protected $_accessible = [
-        'volts' => true,
+        'volt' => true,
         'created' => true
     ];
 }

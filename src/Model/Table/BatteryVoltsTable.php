@@ -47,7 +47,7 @@ class BatteryVoltsTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notEmpty('volts')
+            ->notEmpty('volt')
             ->notEmpty('id');
 
         return $validator;
