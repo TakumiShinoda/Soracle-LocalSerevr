@@ -6,10 +6,10 @@ use Cake\Event\Event;
 
 class AppController extends Controller{
     public function initialize(){
-        parent::initialize();
+      parent::initialize();
 
-        $this->loadComponent('RequestHandler');
-        $this->loadComponent('Flash');
+      $this->loadComponent('RequestHandler');
+      $this->loadComponent('Flash');
     }
 
     public function giveId($table, $entity){
@@ -22,7 +22,6 @@ class AppController extends Controller{
 
     public function getLastId($table){
       $result = -1;
-      $this->log($table);
       if(!empty($table)){
         foreach($table as $id){
           if($id->id > $result){

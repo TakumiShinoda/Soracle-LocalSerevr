@@ -8,6 +8,10 @@ class SoracleController extends AppController{
   public function index(){
     $this->viewBuilder()->layout(false);
     $volts = TableRegistry::get('battery_volts')->find();
+
+    $this->set('battery_volts', $volts);
+    $this->set('app_controller', $this);
+
     $this->render('index');
   }
 
