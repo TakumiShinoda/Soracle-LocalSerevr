@@ -7,9 +7,10 @@ use Cake\I18n\Time;
 class SoracleController extends AppController{
   public function index(){
     $this->viewBuilder()->layout(false);
-    $volts = TableRegistry::get('battery_volts')->find();
+    $battery_volts_table = TableRegistry::get('battery_volts');
 
-    $this->set('battery_volts', $volts);
+    $this->set('last_battery_volt', $battery_volts_table->find()->where(['id'=>$this->getLastId($battery_volts_table->find())])->first()->volt);
+    $this->set('battery_volts', $battery_volts_table->find());
     $this->set('app_controller', $this);
 
     $this->render('index');
