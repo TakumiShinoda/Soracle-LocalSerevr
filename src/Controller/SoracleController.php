@@ -38,5 +38,19 @@ class SoracleController extends AppController{
     }
     $this->render('post');
   }
+
+  public function delete(){
+    $this->viewBuilder()->layout(false);
+
+    $delete_id = $this->request->getQuery('id');
+    $battery_volts = TableRegistry::get('battery_volts');
+    if($battery_volts->deleteAll(['id' => $delete_id])){
+      $this->set('mes', 'success');
+    }else{
+      $this->set('mes', 'fail');
+    }
+    
+    $this->render('delete');
+  }
 }
 ?>
