@@ -19,6 +19,7 @@
             <tr>
               <td><?= $bv->volt ?></td>
               <td><?= $bv->created ?></td>
+              <td><input type="button" value="削除" onclick="requestDelete(<?= $bv->id ?>)"></td>
             </tr>
           <?php endforeach; ?>
         </table>
