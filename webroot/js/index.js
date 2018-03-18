@@ -10,7 +10,7 @@ function display(className){
 
 function requestDelete(id){
   var request = new XMLHttpRequest();
-  request.open("GET", 'http://localhost/Soracle-server/soracle/delete/?id=' + id, true);
+  request.open("GET", 'http://'+ location.hostname +'/Soracle-server/soracle/delete/?id=' + id, true);
   request.send();
 
   request.onreadystatechange = () => {
