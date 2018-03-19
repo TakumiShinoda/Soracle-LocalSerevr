@@ -26,7 +26,8 @@ class SoracleController extends AppController{
 
     if($query_data != Null && $query_data != ''){
       $battery_volt->volt = (int)$query_data;
-      $battery_volt->created = new Time(date('Y-m-d H:i:s'));
+      $now = new Time(date('Y-m-d H:i:s'));
+      $battery_volt->created = $now->addHours(9);
       $this->log($this->getLastId($battery_volts->find()));
       $this->giveId($battery_volts, $battery_volt);
 
@@ -49,7 +50,7 @@ class SoracleController extends AppController{
     }else{
       $this->set('mes', 'fail');
     }
-    
+
     $this->render('delete');
   }
 }
